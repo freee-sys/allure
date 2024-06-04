@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
-import { NavLinks } from './NavLinks';
 import { Button } from '@/ui/button';
+
+import { NavLinks } from './NavLinks';
 
 export const Header = async () => {
   const session = true;

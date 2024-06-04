@@ -1,12 +1,14 @@
 'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { NewCollection } from './_components/NewCollection';
-import { Rings } from './_components/Rings';
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
+
 import { Bracelets } from './_components/Bracelets';
 import { Necklaces } from './_components/Necklaces';
-import Link from 'next/link';
+import { NewCollection } from './_components/NewCollection';
+import { Rings } from './_components/Rings';
 
 const tabs = [
   {

@@ -1,6 +1,6 @@
 'use client';
 
-import { YMaps, Map } from '@pbe/react-yandex-maps';
+import { Map, YMaps } from '@pbe/react-yandex-maps';
 
 export const YandexMap = () => {
   return (

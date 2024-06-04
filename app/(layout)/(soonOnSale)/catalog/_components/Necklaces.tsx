@@ -1,7 +1,8 @@
+import Image from 'next/image';
+
 import { Product } from '@/lib/contexts/products/ProductsContext';
 import { useProducts } from '@/lib/contexts/products/useProducts';
 import { Button } from '@/ui/button';
-import Image from 'next/image';
 
 const products = [
   {

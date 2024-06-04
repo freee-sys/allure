@@ -1,8 +1,8 @@
+import Image from 'next/image';
+
 import new_col1 from '@/public/new_col1.png';
 import new_col2 from '@/public/new_col2.png';
 import new_col3 from '@/public/new_col3.png';
-
-import Image from 'next/image';
 
 export const NewCollection = () => {
   return (

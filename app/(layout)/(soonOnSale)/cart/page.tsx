@@ -1,12 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { useProducts } from '@/lib/contexts/products/useProducts';
-import { RadioGroup, RadioGroupItem } from '@/ui/radio-group';
-import { Label } from '@/ui/label';
 import { buttonVariants } from '@/ui/button';
-import Image from 'next/image';
+import { Label } from '@/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/ui/radio-group';
 import { cn } from '@/utils/cn';
 
 const Korzina = () => {

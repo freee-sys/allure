@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
+import { inter, kharkiv } from '@/fonts/index';
 import { ProductsProvider } from '@/lib/contexts/products/ProductsProvider';
+import { cn } from '@/utils/cn';
 
 import '@/assets/globals.css';
-import { inter, kharkiv } from '@/fonts/index';
-import { cn } from '@/utils/cn';
 
 export const metadata: Metadata = {
   title: 'Allure'
