@@ -18,6 +18,15 @@
       }
     ],
     "paths": {
+      "@/fonts/*": ["./assets/fonts/*"],
+      "@/auth": ["./lib/auth/index.ts"],
+      "@/zod/*": ["./lib/zod/*"],
+      "@/hooks/*": ["./lib/hooks/*"],
+      "@/api/*": ["./lib/api/*"],
+      "@/helpers/*": ["./lib/helpers/*"],
+      "@/utils/*": ["./lib/utils/*"],
+      "@/icons/*": ["./components/icons/*"],
+      "@/ui/*": ["./components/ui/*"],
       "@/*": ["./*"]
     }
   },
