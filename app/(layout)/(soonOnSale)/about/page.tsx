@@ -1,127 +1,100 @@
-import './about.css';
+import Marquee from 'react-fast-marquee';
+import Image from 'next/image';
+
+const team1 = ['member1.png', 'member2.png', 'member3.png'];
+
+const team2 = ['member4.png', 'member5.png', 'member6.png'];
 
 const About = () => {
   return (
-    <main>
-      <section className='moving-stripes'>
-        <div className='stripe'>
-          <div className='stripe-text'>
-            ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE
-            ALLURE ALLURE ALLURE ALLURE
-          </div>
-        </div>
-        <div className='stripe'>
-          <div className='stripe-text'>
-            О БРЕНДЕ О БРЕНДЕ О БРЕНДЕ О БРЕНДЕ О БРЕНДЕ О БРЕНДЕ О БРЕНДЕ О БРЕНДЕ О БРЕНДЕ О
-            БРЕНДЕ О БРЕНДЕ О БРЕНДЕ
-          </div>
-        </div>
-        <div className='stripe'>
-          <div className='stripe-text'>
-            ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE ALLURE
-            ALLURE ALLURE ALLURE ALLURE
-          </div>
+    <main className='flex flex-col gap-40'>
+      <section className='select-none overflow-hidden font-kharkiv text-8xl'>
+        <hr className='my-3.5 bg-white' />
+        <Marquee autoFill className='overflow-hidden'>
+          ALLURE&nbsp;
+        </Marquee>
+
+        <hr className='my-3.5 bg-white' />
+        <Marquee autoFill speed={30} className='overflow-hidden'>
+          О БРЕНДЕ&nbsp;
+        </Marquee>
+
+        <hr className='my-3.5 bg-white' />
+        <Marquee autoFill speed={50} className='overflow-hidden'>
+          ALLURE&nbsp;
+        </Marquee>
+        <hr className='my-3.5 bg-white' />
+      </section>
+
+      <section className='flex max-w-[630px] flex-col gap-14 self-center font-kharkiv text-2xl'>
+        <h4>
+          Allure был основан в 2012 году с одной целью: объединить любовь к драгоценным камням и
+          ювелирному искусству.
+        </h4>
+        <h4>
+          С первых дней существования мы стремились создать коллекции, которые бы сочетали в себе
+          вечную классику и современные тенденции.
+        </h4>
+      </section>
+
+      <section className='flex flex-col gap-14 overflow-hidden'>
+        <h1 className='text-center font-kharkiv text-8xl'>НАША КОМАНДА</h1>
+        <div className='flex flex-col gap-4 font-inter text-lg'>
+          <Marquee speed={50} className='overflow-hidden'>
+            {team1.map((member) => (
+              <div
+                key={member}
+                className='mr-4 flex w-[560px] items-center rounded-ui border border-white px-5 py-4'
+              >
+                <Image width={211} height={216} src={`/${member}`} alt='member' className='mr-24' />
+                <div className='flex flex-col gap-11 text-center'>
+                  <span>Имя Фамилия</span>
+                  <span>Должность</span>
+                </div>
+              </div>
+            ))}
+          </Marquee>
+          <Marquee speed={50} direction='right' className='overflow-hidden'>
+            {team2.map((member) => (
+              <div
+                key={member}
+                className='mr-4 flex w-[560px] items-center rounded-ui border border-white px-5 py-4'
+              >
+                <Image width={211} height={216} src={`/${member}`} alt='member' className='mr-24' />
+                <div className='flex flex-col gap-11 text-center'>
+                  <span>Имя Фамилия</span>
+                  <span>Должность</span>
+                </div>
+              </div>
+            ))}
+          </Marquee>
         </div>
       </section>
 
-      <section className='about'>
-        <div className='left'>
-          <h4>
-            Allure был основан в 2012 году с одной целью: объединить любовь к драгоценным камням и
-            ювелирному искусству.
-          </h4>
-          <h4>
-            С первых дней существования мы стремились создать коллекции, которые бы сочетали в себе
-            вечную классику и современные тенденции.
-          </h4>
-        </div>
-      </section>
-
-      <section className='out-team'>
-        <h1>НАША КОМАНДА</h1>
-        <div className='scroll'>
-          <div className='row first-row'>
-            <div className='rectangle'>
-              <div className='photo'>
-                <img src='member1.png' alt='Foto' />
-              </div>
-              <div className='info'>
-                <h4>Имя Фамилия</h4>
-                <p>Креативный директор</p>
-              </div>
-            </div>
-            <div className='rectangle'>
-              <div className='photo'>
-                <img src='member2.png' alt='Foto' />
-              </div>
-              <div className='info'>
-                <h4>Имя Фамилия</h4>
-                <p>Дизайнер</p>
-              </div>
-            </div>
-            <div className='rectangle'>
-              <div className='photo'>
-                <img src='member3.png' alt='Foto' />
-              </div>
-              <div className='info'>
-                <h4>Имя Фамилия</h4>
-                <p>Должность</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='row second-row'>
-            <div className='rectangle'>
-              <div className='photo'>
-                <img src='member4.png' alt='Foto' />
-              </div>
-              <div className='info'>
-                <h4>Имя Фамилия</h4>
-                <p>Должность</p>
-              </div>
-            </div>
-            <div className='rectangle'>
-              <div className='photo'>
-                <img src='member5.png' alt='Foto' />
-              </div>
-              <div className='info'>
-                <h4>Имя Фамилия</h4>
-                <p>Должность</p>
-              </div>
-            </div>
-            <div className='rectangle'>
-              <div className='photo'>
-                <img src='member6.png' alt='Foto' />
-              </div>
-              <div className='info'>
-                <h4>Имя Фамилия</h4>
-                <p>Должность</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className='values'>
-        <h1>НАШИ ЦЕННОСТИ</h1>
-        <div className='values-container'>
-          <div className='value-card'>
-            <h4>КАЧЕСТВО</h4>
-            <p>
+      <section className='flex flex-col gap-14 font-kharkiv'>
+        <h1 className='text-8xl'>
+          НАШИ
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ЦЕННОСТИ
+        </h1>
+        <div className='relative h-[460px]'>
+          <div className='absolute left-0 top-0 flex max-w-[500px] flex-col gap-12 rounded-ui border border-white bg-transparent px-4 py-8'>
+            <h4 className='text-right text-2xl'>КАЧЕСТВО</h4>
+            <p className='text-lg'>
               Мы выбираем только лучшие материалы и следим за каждым этапом производства, чтобы
               предложить вам изделия высочайшего качества.
             </p>
           </div>
-          <div className='value-card'>
-            <h4>ДОВЕРИЕ</h4>
-            <p>
+          <div className='absolute right-0 top-0 flex max-w-[500px] flex-col gap-12 rounded-ui border border-white bg-transparent px-4 py-8'>
+            <h4 className='text-left text-2xl'>ДОВЕРИЕ</h4>
+            <p className='text-lg'>
               Мы ценим доверие наших клиентов и гарантируем прозрачность и честность во всем, что мы
               делаем.
             </p>
           </div>
-          <div className='value-card'>
-            <h4>УНИКАЛЬНОСТЬ</h4>
-            <p>
+          <div className='absolute bottom-0 left-1/2 flex max-w-[500px] -translate-x-1/2 flex-col gap-12 rounded-ui border border-white bg-transparent px-4 py-8'>
+            <h4 className='text-center text-2xl'>УНИКАЛЬНОСТЬ</h4>
+            <p className='text-lg'>
               Каждое украшение в нашем ассортименте – это уникальное произведение, созданное с
               вниманием к деталям.
             </p>
