@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import { inter, kharkiv } from '@/fonts/index';
-import { ProductsProvider } from '@/lib/contexts/products/ProductsProvider';
 import { cn } from '@/utils/cn';
 
 import '@/assets/globals.css';
@@ -17,9 +16,7 @@ const RootLayout = async ({
 }>) => {
   return (
     <html lang='ru' className={cn(`${inter.variable} ${kharkiv.variable}`, 'container')}>
-      <body>
-        <ProductsProvider>{children}</ProductsProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 };
