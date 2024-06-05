@@ -4,7 +4,7 @@ const Contacts = () => (
   <main className='flex flex-col gap-10 font-kharkiv'>
     <h2 className='text-xl sm:text-5xl'>КОНТАКТЫ</h2>
 
-    <div className='flex gap-10'>
+    <div className='flex flex-col gap-10 md:flex-row'>
       <YandexMap />
       <div className='flex flex-col justify-end gap-14'>
         <p>
