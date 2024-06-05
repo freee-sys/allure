@@ -19,7 +19,7 @@ const Korzina = () => {
       <h2 className='text-xl sm:text-5xl'>КОРЗИНА</h2>
 
       <div className='grid grid-cols-4 gap-10'>
-        <RadioGroup className='col-span-3 h-fit divide-y-2 divide-[#8E8585] rounded-ui border border-white bg-[#161414]'>
+        <RadioGroup className='col-span-4 h-fit divide-y-2 divide-[#8E8585] rounded-ui border border-white bg-[#161414] md:col-span-3'>
           <div className='flex justify-between px-5 py-10 text-lg'>
             <div className='flex items-center justify-center gap-5'>
               <RadioGroupItem value='all' id='all' />
@@ -50,7 +50,7 @@ const Korzina = () => {
           ))}
         </RadioGroup>
 
-        <div className='relative flex h-[300px] flex-col gap-12 rounded-ui border border-white bg-[#161414] px-5 py-10'>
+        <div className='relative hidden h-[300px] flex-col gap-12 rounded-ui border border-white bg-[#161414] px-5 py-10 md:flex'>
           <span>Сумма заказа</span>
           <span className='self-center text-4xl'>{totalPrice} ₽</span>
           <Link

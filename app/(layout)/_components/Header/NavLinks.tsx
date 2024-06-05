@@ -13,11 +13,11 @@ const links = [
   { href: '/cart', label: 'Корзина' }
 ];
 
-export const NavLinks = () => {
+export const NavLinks = ({ className, children, ...props }: React.ComponentProps<'ul'>) => {
   const pathname = usePathname();
 
   return (
-    <ul className='flex gap-[70px] text-[#827F7F]'>
+    <ul className={cn('flex gap-[70px] text-[#827F7F]', className)} {...props}>
       {links.map(({ href, label }) => (
         <li key={href}>
           <Link href={href} className={cn(pathname === href && 'text-white')}>
@@ -25,6 +25,7 @@ export const NavLinks = () => {
           </Link>
         </li>
       ))}
+      {children}
     </ul>
   );
 };
