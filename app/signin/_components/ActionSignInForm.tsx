@@ -24,7 +24,7 @@ export const ActionSignInForm = () => {
           type='email'
           id='email'
           placeholder='example@example.com'
-          className='w-[320px]'
+          className='w-[300px]'
         />
       </div>
 
@@ -35,7 +35,7 @@ export const ActionSignInForm = () => {
           type='password'
           id='password'
           placeholder='password'
-          className='w-[320px]'
+          className='w-[300px]'
         />
       </div>
 
