@@ -18,3 +18,9 @@ yarn dev
 yarn build
 yarn start
 ```
+
+> DB
+
+```bash
+yarn studio
+```
