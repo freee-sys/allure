@@ -40,9 +40,9 @@ export const TabsContainer = ({ products }: TabsContainerProps) => {
 
   return (
     <Tabs defaultValue={defaultTab} className='flex flex-col items-center'>
-      <TabsList className='mb-7'>
+      <TabsList className='mb-7 flex-col lg:flex-row'>
         {tabs.map((tab) => (
-          <TabsTrigger key={tab.value} value={tab.value}>
+          <TabsTrigger key={tab.value} value={tab.value} className='w-full lg:w-fit'>
             <Link
               href={{
                 query: { tab: tab.value }
@@ -53,16 +53,28 @@ export const TabsContainer = ({ products }: TabsContainerProps) => {
           </TabsTrigger>
         ))}
       </TabsList>
-      <TabsContent value='new-collection'>
+      <TabsContent
+        value='new-collection'
+        className='flex w-full flex-wrap justify-center gap-[80px] font-kharkiv text-lg'
+      >
         <NewCollection />
       </TabsContent>
-      <TabsContent value='rings'>
+      <TabsContent
+        value='rings'
+        className='flex w-full flex-wrap justify-center gap-[80px] font-kharkiv text-lg'
+      >
         <Rings products={products.rings} />
       </TabsContent>
-      <TabsContent value='bracelets'>
+      <TabsContent
+        value='bracelets'
+        className='flex w-full flex-wrap justify-center gap-[80px] font-kharkiv text-lg'
+      >
         <Bracelets products={products.bracelets} />
       </TabsContent>
-      <TabsContent value='necklaces'>
+      <TabsContent
+        value='necklaces'
+        className='flex w-full flex-wrap justify-center gap-[80px] font-kharkiv text-lg'
+      >
         <Necklaces products={products.necklaces} />
       </TabsContent>
     </Tabs>

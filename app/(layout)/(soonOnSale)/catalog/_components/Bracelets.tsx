@@ -17,7 +17,7 @@ export const Bracelets = ({ products }: TabProps) => {
   };
 
   return (
-    <div className='flex w-full flex-wrap gap-[80px] font-kharkiv text-lg'>
+    <>
       {products?.map((product) => (
         <div key={product.id} className='relative h-[450px] w-[290px] rounded-ui bg-white'>
           <Image
@@ -36,6 +36,6 @@ export const Bracelets = ({ products }: TabProps) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
