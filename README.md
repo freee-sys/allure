@@ -1,12 +1,20 @@
 ## Allure
 
 ```bash
+npm i -g yarn
+
 yarn
 ```
 
+> For develompent
+
 ```bash
 yarn dev
-# or
+```
+
+> For production
+
+```bash
 yarn build
 yarn start
 ```

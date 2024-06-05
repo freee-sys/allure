@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/fonts/*": ["./assets/fonts/*"],
-      "@/auth": ["./lib/auth/index.ts"],
+      "@/auth": ["./lib/auth.ts"],
+      "@/store": ["./lib/store.ts"],
       "@/zod/*": ["./lib/zod/*"],
       "@/hooks/*": ["./lib/hooks/*"],
       "@/api/*": ["./lib/api/*"],

@@ -1,40 +1,24 @@
+import { Product } from '@prisma/client';
+import { useSetAtom } from 'jotai';
 import Image from 'next/image';
 
-import { Product } from '@/lib/contexts/products/ProductsContext';
-import { useProducts } from '@/lib/contexts/products/useProducts';
+import { cartAtom } from '@/store';
 import { Button } from '@/ui/button';
 
-const products = [
-  {
-    id: '12312423fgdfgfdg',
-    name: 'Ожерелье "Золотая кость"',
-    price: '49 000',
-    image: 'product1.png'
-  },
-  {
-    id: '1231gghfghgdfgfdg',
-    name: 'Ожерелье "Золотая кость"',
-    price: '49 000',
-    image: 'product1.png'
-  },
-  {
-    id: '167876812423fgdfpog',
-    name: 'Ожерелье "Золотая кость"',
-    price: '49 000',
-    image: 'product1.png'
-  }
-];
+interface TabProps {
+  products: Product[];
+}
 
-export const Necklaces = () => {
-  const cart = useProducts();
+export const Necklaces = ({ products }: TabProps) => {
+  const setCart = useSetAtom(cartAtom);
 
   const onClick = (product: Product) => {
-    cart.addProduct(product);
+    setCart((prev) => [...prev, product]);
   };
 
   return (
     <div className='flex w-full flex-wrap gap-[80px] font-kharkiv text-lg'>
-      {products.map((product) => (
+      {products?.map((product) => (
         <div key={product.id} className='relative h-[450px] w-[290px] rounded-ui bg-white'>
           <Image
             width={290}

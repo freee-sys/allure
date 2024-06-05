@@ -13,6 +13,9 @@ const config = {
       }
     },
     extend: {
+      height: {
+        'full-screen': 'calc(100svh - 130px - 127px)'
+      },
       fontFamily: {
         inter: ['var(--font-inter)'],
         kharkiv: ['var(--font-kharkiv)']

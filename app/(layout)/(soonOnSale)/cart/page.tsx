@@ -1,17 +1,19 @@
 'use client';
 
+import { useAtom, useAtomValue } from 'jotai';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useProducts } from '@/lib/contexts/products/useProducts';
+import { cartAtom, totalPriceAtom } from '@/store';
 import { buttonVariants } from '@/ui/button';
 import { Label } from '@/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/ui/radio-group';
 import { cn } from '@/utils/cn';
 
 const Korzina = () => {
-  const cart = useProducts();
+  const [cart, setCart] = useAtom(cartAtom);
 
+  const totalPrice = useAtomValue(totalPriceAtom);
   return (
     <main className='flex flex-col gap-10 font-kharkiv'>
       <h2 className='text-xl sm:text-5xl'>КОРЗИНА</h2>
@@ -26,7 +28,7 @@ const Korzina = () => {
             <span className='text-[#635858]'>Удалить выбранное</span>
           </div>
 
-          {cart.products.map((product) => (
+          {cart.map((product) => (
             <div key={product.id} className='flex justify-between px-5 py-10'>
               <div className='flex items-center justify-center gap-5'>
                 <RadioGroupItem value={product.id} />
@@ -50,9 +52,7 @@ const Korzina = () => {
 
         <div className='relative flex h-[300px] flex-col gap-12 rounded-ui border border-white bg-[#161414] px-5 py-10'>
           <span>Сумма заказа</span>
-          <span className='self-center text-4xl'>
-            {cart.products.reduce((a, b) => a + Number(b.price.replaceAll(' ', '')), 0)} ₽
-          </span>
+          <span className='self-center text-4xl'>{totalPrice} ₽</span>
           <Link
             href='payment'
             className={cn(buttonVariants({ size: 'lg' }), 'absolute bottom-0 left-0 right-0')}
