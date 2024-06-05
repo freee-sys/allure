@@ -6,10 +6,8 @@ import { useSearchParams } from 'next/navigation';
 import { GetProductsResponse } from '@/api/products';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
 
-import { Bracelets } from './Bracelets';
-import { Necklaces } from './Necklaces';
 import { NewCollection } from './NewCollection';
-import { Rings } from './Rings';
+import { Products } from './Products';
 
 const tabs = [
   {
@@ -40,7 +38,7 @@ export const TabsContainer = ({ products }: TabsContainerProps) => {
 
   return (
     <Tabs defaultValue={defaultTab} className='flex flex-col items-center'>
-      <TabsList className='mb-7 flex-col lg:flex-row'>
+      <TabsList className='mb-10 flex-col lg:flex-row'>
         {tabs.map((tab) => (
           <TabsTrigger key={tab.value} value={tab.value} className='w-full lg:w-fit'>
             <Link
@@ -63,19 +61,19 @@ export const TabsContainer = ({ products }: TabsContainerProps) => {
         value='rings'
         className='flex w-full flex-wrap justify-center gap-[80px] font-kharkiv text-lg'
       >
-        <Rings products={products.rings} />
+        <Products products={products.rings} />
       </TabsContent>
       <TabsContent
         value='bracelets'
         className='flex w-full flex-wrap justify-center gap-[80px] font-kharkiv text-lg'
       >
-        <Bracelets products={products.bracelets} />
+        <Products products={products.bracelets} />
       </TabsContent>
       <TabsContent
         value='necklaces'
         className='flex w-full flex-wrap justify-center gap-[80px] font-kharkiv text-lg'
       >
-        <Necklaces products={products.necklaces} />
+        <Products products={products.necklaces} />
       </TabsContent>
     </Tabs>
   );

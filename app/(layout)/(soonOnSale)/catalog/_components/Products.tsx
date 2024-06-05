@@ -4,12 +4,13 @@ import Image from 'next/image';
 
 import { cartAtom } from '@/store';
 import { Button } from '@/ui/button';
+import { numberWithSpaces } from '@/utils/numberWithSpaces';
 
 interface TabProps {
   products: Product[];
 }
 
-export const Bracelets = ({ products }: TabProps) => {
+export const Products = ({ products }: TabProps) => {
   const setCart = useSetAtom(cartAtom);
 
   const onClick = (product: Product) => {
@@ -30,7 +31,7 @@ export const Bracelets = ({ products }: TabProps) => {
           <div className='absolute bottom-[1px] left-[1px] right-[1px] flex flex-col gap-2.5 rounded-ui bg-black pb-2.5 pl-5 pr-2.5 pt-5'>
             <span>{product.name}</span>
             <div className='flex justify-between'>
-              <span>{product.price} ₽</span>
+              <span>{numberWithSpaces(product.price)} ₽</span>
               <Button onClick={() => onClick(product)}>В корзину</Button>
             </div>
           </div>

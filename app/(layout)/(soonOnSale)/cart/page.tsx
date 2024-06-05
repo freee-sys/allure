@@ -9,6 +9,7 @@ import { buttonVariants } from '@/ui/button';
 import { Label } from '@/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/ui/radio-group';
 import { cn } from '@/utils/cn';
+import { numberWithSpaces } from '@/utils/numberWithSpaces';
 
 const Korzina = () => {
   const [cart, setCart] = useAtom(cartAtom);
@@ -19,8 +20,8 @@ const Korzina = () => {
       <h2 className='text-xl sm:text-5xl'>КОРЗИНА</h2>
 
       <div className='grid grid-cols-4 gap-10'>
-        <RadioGroup className='col-span-4 h-fit divide-y-2 divide-[#8E8585] rounded-ui border border-white bg-[#161414] md:col-span-3'>
-          <div className='flex justify-between px-5 py-10 text-lg'>
+        <RadioGroup className='col-span-4 h-fit divide-y-2 divide-[#8E8585] rounded-ui border border-white bg-[#161414] text-sm sm:text-base md:col-span-3 md:text-lg'>
+          <div className='flex justify-between px-5 py-10'>
             <div className='flex items-center justify-center gap-5'>
               <RadioGroupItem value='all' id='all' />
               <Label htmlFor='all'>Выбрать все</Label>
@@ -45,14 +46,14 @@ const Korzina = () => {
 
                 <span className='text-[#635858]'>300 г</span>
               </div>
-              <span className=''>{product.price} ₽</span>
+              <span className=''>{numberWithSpaces(product.price)} ₽</span>
             </div>
           ))}
         </RadioGroup>
 
         <div className='relative hidden h-[300px] flex-col gap-12 rounded-ui border border-white bg-[#161414] px-5 py-10 md:flex'>
           <span>Сумма заказа</span>
-          <span className='self-center text-4xl'>{totalPrice} ₽</span>
+          <span className='self-center text-4xl'>{numberWithSpaces(totalPrice)} ₽</span>
           <Link
             href='payment'
             className={cn(buttonVariants({ size: 'lg' }), 'absolute bottom-0 left-0 right-0')}
